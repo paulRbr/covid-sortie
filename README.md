@@ -1,4 +1,7 @@
-# [https://vik.io/sortie](https://vik.io/sortie)
+# [https://paulrbr.io/sortie](https://paulrbr.io/sortie)
+
+_Fork de https://github.com/vikbez/covid-sortie (disponible sur https://vik.io/sortie)_
+
 Un formulaire en ligne pour simplifier l'attestation de sortie pendant le confinement.
 
 J'ai fait ceci dans le but de m'aider moi meme et mes amis, mais vu que vous êtes tous chez vous aujourd'hui ça a forcément dégénéré et vous avez surchargé mon serveur :D
