@@ -89,11 +89,11 @@ function render() {
   if (place.toLowerCase() == "paris" &&
       10 <= nowHours && nowHours < 19) {
     alert(
-      "D'après un communiqué de presse de la Préfecture de Paris, il est désormais interdit de faire du sport entre 10h et 19h.\n \
+      "D’après l’arrêté n°2020-00280 de la Préfecture de Police de Paris, il est désormais interdit de faire du sport entre 10h et 19h.\n \
 \n \
 Êtes vous sûr de vouloir sortir? \n \
 \n \
-(cf. https://twitter.com/prefpolice/status/1247456754058878976)."
+(cf. https://www.prefecturedepolice.interieur.gouv.fr/content/download/36337/269231/file/Arrete_2020-00280.pdf)."
          );
   }
 
