@@ -83,6 +83,20 @@ function render() {
   $("clear_btn").remove();
   $("render_btn").remove();
 
+  var place = $('place').value;
+  var nowHours = new Date().getHours();
+
+  if (place.toLowerCase() == "paris" &&
+      10 <= nowHours && nowHours < 19) {
+    alert(
+      "D'après un communiqué de presse de la Préfecture de Paris, il est désormais interdit de faire du sport entre 10h et 19h.\n \
+\n \
+Êtes vous sûr de vouloir sortir? \n \
+\n \
+(cf. https://twitter.com/prefpolice/status/1247456754058878976)."
+         );
+  }
+
   var date = $('date').valueAsDate.toLocaleDateString('fr-FR');
   var born = $('born').valueAsDate.toLocaleDateString('fr-FR');
   var formatter = new Intl.DateTimeFormat("fr-FR", {hour: "numeric", minute: "numeric"});
