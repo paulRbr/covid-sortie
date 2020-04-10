@@ -83,11 +83,20 @@ function render() {
   $("clear_btn").remove();
   $("render_btn").remove();
 
+  var to_disable = ['choix_a', 'choix_b', 'choix_c', 'choix_d', 'choix_e', 'choix_f', 'choix_g'];
+  var motifs = to_disable.reduce(function(acc, el) {
+    if ($(el).checked) {
+      return acc.concat([$(el).value]);
+    } else {
+      return acc;
+    }
+  }, []).join('-');
   var place = $('place').value;
   var nowHours = new Date().getHours();
 
   if (place.toLowerCase() == "paris" &&
-      10 <= nowHours && nowHours < 19) {
+      10 <= nowHours && nowHours < 19 &&
+      motifs.indexOf("sport") > -1) {
     alert(
       "D’après l’arrêté n°2020-00280 de la préfecture de police de Paris, il est désormais interdit de faire du sport entre 10h et 19h.\n \
 \n \
@@ -101,15 +110,6 @@ function render() {
   var born = $('born').valueAsDate.toLocaleDateString('fr-FR');
   var formatter = new Intl.DateTimeFormat("fr-FR", {hour: "numeric", minute: "numeric"});
   var time = formatter.format(new Date($('date-time').valueAsDate.getTime() + $('date-time').valueAsDate.getTimezoneOffset()*60*1000));
-  var to_disable = ['choix_a', 'choix_b', 'choix_c', 'choix_d', 'choix_e', 'choix_f', 'choix_g'];
-
-  var motifs = to_disable.reduce(function(acc, el) {
-    if ($(el).checked) {
-      return acc.concat([$(el).value]);
-    } else {
-      return acc;
-    }
-  }, []).join('-');
   var qrCodeText = "Cree le: " + date + " a " + time + "; Nom: " + $('name').value.split(" ")[1] + "; Prenom: " + $('name').value.split(" ")[0] + "; Naissance: " + born + " a " + $('where').value + "; Adresse: " + $('address').value + "; Sortie: " + date + " a " + time + "; Motifs: " + motifs;
 
   QRCode.toCanvas(
